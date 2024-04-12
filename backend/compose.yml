@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    container_name: 'mongodb'
+    image: 'mongodb/mongodb-community-server'
+    restart: 'always'
+    volumes:
+      - 'db:/data/db'
+    ports:
+      - '27017:27017'
+
+
+volumes:
+  db:
