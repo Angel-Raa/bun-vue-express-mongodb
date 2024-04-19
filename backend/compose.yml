@@ -1,13 +1,15 @@
 services:
   mongodb:
-    container_name: 'mongodb'
+    container_name: 'database-vue-express'
     image: 'mongodb/mongodb-community-server'
     restart: 'always'
     volumes:
-      - 'db:/data/db'
+      - 'mongodb:/var/lib/mongodb/data'
+    expose:
+      - '27017'
     ports:
       - '27017:27017'
-
+    
 
 volumes:
-  db:
+  mongodb:
