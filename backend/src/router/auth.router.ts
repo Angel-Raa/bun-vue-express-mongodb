@@ -5,7 +5,7 @@ import { validation } from "../middlewares/validation";
 
 const router = express.Router();
 
-router.get(
+router.post(
   "/login",
   [
     body("email")
@@ -25,6 +25,7 @@ router.get(
 router.post(
   "/register",
   [
+    body("name").trim().notEmpty().withMessage("El nombre es obligatorio"),
     body("email")
       .trim()
       .isEmail()

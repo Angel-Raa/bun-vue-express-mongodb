@@ -1,6 +1,6 @@
 import express from "express";
 import "./database/connected";
-import router from "./router/auth";
+import router from "./router/auth.router";
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
